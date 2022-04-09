@@ -116,7 +116,8 @@
     "@vaadin/virtual-list": "23.0.4",
     "construct-style-sheets-polyfill": "3.0.4",
     "date-fns": "2.23.0",
-    "lit": "2.1.4"
+    "lit": "2.1.4",
+    "react-router-dom": "^6.3.0"
   },
   "devDependencies": {
     "chokidar": "^3.5.0",

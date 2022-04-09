@@ -3,10 +3,7 @@ package model;
 import lombok.*;
 import org.hibernate.Hibernate;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
@@ -14,9 +11,10 @@ import java.util.Objects;
 @Getter
 @Setter
 @ToString
-@RequiredArgsConstructor
+@NoArgsConstructor
 public class Notes {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name ="title")
     private String title;
@@ -24,6 +22,12 @@ public class Notes {
     private String body;
     @Column(name = "category")
     private String category;
+
+    public Notes(String title, String body, String category) {
+        this.title = title;
+        this.body = body;
+        this.category = category;
+    }
 
     @Override
     public boolean equals(Object o) {
